@@ -2,6 +2,7 @@
 /*
  * Gera versões de arquivo único a partir de src/:
  *   dist/nasa-tlx.html  — página completa, com CSS e JS incorporados (abre direto no navegador)
+ *   index.html          — cópia de dist/nasa-tlx.html, servida pelo GitHub Pages
  *   dist/artifact.html  — o mesmo conteúdo sem <html>/<head>/<body>, para publicação como Artifact
  * Uso: node tools/build.js
  */
@@ -22,6 +23,8 @@ html = html.replace(/<script src="(js\/[^"]+)"><\/script>/g, (_, file) => {
 const dist = path.join(root, 'dist');
 fs.mkdirSync(dist, { recursive: true });
 fs.writeFileSync(path.join(dist, 'nasa-tlx.html'), html);
+// Página publicada pelo GitHub Pages (raiz do repositório).
+fs.writeFileSync(path.join(root, 'index.html'), html);
 
 // Versão Artifact: o conteúdo de <head> (title, fontes, estilo) vem primeiro, depois o corpo.
 const head = /<head>([\s\S]*?)<\/head>/.exec(html)[1]

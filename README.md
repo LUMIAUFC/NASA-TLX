@@ -22,9 +22,9 @@ python3 -m http.server 8080
 # abra http://localhost:8080
 ```
 
-**Opção 3 — GitHub Pages.** Publique `dist/nasa-tlx.html` (renomeado para `index.html`) ou a pasta `src/` em um repositório da organização LUMIAUFC e ative o GitHub Pages.
+**Opção 3 — online.** O sistema está publicado pelo GitHub Pages em https://lumiaufc.github.io/NASA-TLX/ (o `index.html` da raiz, gerado pelo build).
 
-Para regenerar o arquivo único depois de alterar `src/`:
+Para regenerar o arquivo único (e o `index.html` publicado) depois de alterar `src/`:
 
 ```bash
 node tools/build.js
