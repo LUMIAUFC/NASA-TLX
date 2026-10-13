@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NASA-TLX LUMIA</title>
+<meta name="description" content="Avaliação de carga de trabalho com o NASA-TLX (Índice de Carga de Trabalho da NASA): escalas, comparações, cálculo ponderado e Raw TLX, relatório em PDF e CSV. Os dados ficam no navegador.">
+<link rel="icon" id="favicon" href="data:,">
+<!--FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<!--/FONTS-->
+<link rel="stylesheet" href="css/tlx.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="brandbar">
+  <div class="brandbar__inner">
+    <div class="brandbar__logos">
+      <span class="brandbar__plate"><img id="logo-ufc" alt="Universidade Federal do Ceará — Campus Quixadá" width="80" height="58"></span>
+      <span class="brandbar__sep" aria-hidden="true"></span>
+      <img id="logo-lumia" class="brandbar__lumia" alt="LUMIA — Laboratório de Usabilidade, Mídias e Inteligência Artificial" width="130" height="46">
+    </div>
+    <span class="brandbar__tag">NASA-TLX</span>
+  </div>
+  <div class="brandline" aria-hidden="true"></div>
+</header>
+
+<div class="statusbar">
+  <div class="statusbar__inner">
+    <nav aria-label="Etapas da avaliação">
+      <ol class="steps" id="steps">
+        <li data-step="identificacao"><span class="steps__label">Identificação</span></li>
+        <li data-step="instrucoes"><span class="steps__label">Instruções</span></li>
+        <li data-step="dimensoes"><span class="steps__label">Dimensões</span></li>
+        <li data-step="comparacoes"><span class="steps__label">Comparações</span></li>
+        <li data-step="revisao"><span class="steps__label">Revisão</span></li>
+        <li data-step="resultados"><span class="steps__label">Resultados</span></li>
+      </ol>
+    </nav>
+    <p class="save" id="save-status" data-state="idle">Carregando…</p>
+  </div>
+</div>
+
+<main id="conteudo" class="page" tabindex="-1">
+  <noscript>
+    <div class="notice notice--error"><h2>JavaScript desativado</h2><p>Esta aplicação precisa de JavaScript para registrar as respostas e calcular as pontuações.</p></div>
+  </noscript>
+  <p class="muted" id="carregando">Carregando a aplicação…</p>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p><strong>LUMIA</strong> · Laboratório de Usabilidade, Mídias e Inteligência Artificial · UFC Campus Quixadá</p>
+    <p>Sistema NASA-TLX LUMIA <span class="data" id="app-version"></span> · algoritmo <span class="data" id="alg-version"></span>. As respostas ficam somente neste navegador; nada é enviado pela internet.</p>
+  </div>
+</footer>
+
+<dialog id="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-text">
+  <form method="dialog" class="dialog__body">
+    <h2 class="dialog__title" id="dialog-title"></h2>
+    <div id="dialog-text" class="stack-sm"></div>
+    <div class="actions" id="dialog-actions"></div>
+  </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<div id="alert" class="sr-only" role="alert"></div>
+
+<script src="js/tlx-assets.js"></script>
+<script src="js/tlx-core.js"></script>
+<script src="js/tlx-storage.js"></script>
+<script src="js/tlx-export.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
